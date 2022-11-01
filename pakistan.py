@@ -5,11 +5,6 @@ from OpenGL.GL import *
 from OpenGL.GLU import *
 import math
 
-
-
-
-
-
 def draw():
     glColor3f(0,0.2,0)
     glBegin(GL_QUADS)
@@ -36,7 +31,6 @@ def draw():
         cosine = radius * math.cos(i*2*math.pi/sides)+posx
         sine = radius * math.sin(i*2*math.pi/sides)+posy
         glVertex2f(cosine,sine)
-
 
     glEnd()
     glColor3f(0,0.2,0)
@@ -71,10 +65,6 @@ def draw():
     glVertex2f(0.4, 0.4)
     glVertex2f(0.6, -0.1)
 
-
-
-
-
     glEnd()
 
  
@@ -82,10 +72,8 @@ def main():
     pygame.init()
     display = 500,500
     pygame.display.set_mode(display,DOUBLEBUF|OPENGL|RESIZABLE)
-
     gluPerspective(80,display[0]/display[1],1,10)
     glTranslate(0.0,0.0,-5)
-
     while True:
         for event in pygame.event.get():
             if event.type==pygame.QUIT:
